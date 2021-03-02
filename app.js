@@ -19,8 +19,11 @@ app.use(express.static("public"));
 require('dotenv').config() ;
 
 const pass= process.env.PASSWORD ;
+const username= process.env.USER_id ;
 
-const uri= 'mongodb+srv://admin-Kashish:'+pass+'@cluster0.y7ktc.mongodb.net/todoListDB?poolSize=4' ;
+
+
+const uri= 'mongodb+srv://'+username+':'+pass+'@cluster0.y7ktc.mongodb.net/todoListDB?poolSize=4' ;
 
 mongoose.connect( uri, { useNewUrlParser: true , useUnifiedTopology: true}).
 
